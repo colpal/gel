@@ -48,14 +48,6 @@ test_map() {
 }
 test_map
 
-test_for_each() {
-  expected=$(list 3 4 5 6 7)
-  actual=$(seq 5 | for_each add 2 2>&1)
-  tag=test_for_each
-  assert_equal "$expected" "$actual" "$tag"
-}
-test_for_each
-
 test_filter() {
   expected=$(list 3 6 9)
   actual=$(seq 10 | filter is_divisible_by 3)
