@@ -87,3 +87,11 @@ test_append() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_append
+
+test_prepend() {
+  expected=$(list a b c 1 2 3)
+  actual=$(seq 3 | prepend a b c)
+  tag=test_prepend
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_prepend

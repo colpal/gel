@@ -24,6 +24,11 @@ append() {
   list "$@"
 }
 
+prepend() {
+  list "$@"
+  cat -
+}
+
 map() {
   fn=$1
   shift
