@@ -72,3 +72,11 @@ test_drop() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_drop
+
+test_take() {
+  expected=$(list 1 2 3)
+  actual=$(seq 5 | take 3)
+  tag=test_take
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_take

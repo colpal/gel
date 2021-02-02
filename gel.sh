@@ -15,6 +15,10 @@ drop() {
   tail -n +$(($1 + 1))
 }
 
+take() {
+  head -n "$1"
+}
+
 map() {
   fn=$1
   shift
