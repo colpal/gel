@@ -48,3 +48,11 @@ test_map() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_map
+
+test_filter() {
+  expected=$(list 3 6 9)
+  actual=$(seq 10 | filter is_divisible_by 3)
+  tag=test_filter
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_filter
