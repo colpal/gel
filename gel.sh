@@ -14,16 +14,10 @@ unlist() {
 map() {
   fn=$1
   shift
-  output=''
-  for item in "$@"; do
-    if [ -z "$output" ]; then
-      output=$($fn "$item")
-    else
-output="$output
-$($fn "$item")"
-    fi
+  item=
+  while read -r item; do
+    printf '%s\n' "$($fn "$@" "$item")"
   done
-  printf '%s' "$output"
 }
 
 filter() {
