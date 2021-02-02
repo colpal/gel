@@ -53,6 +53,17 @@ filter() {
   done
 }
 
+remove() {
+  fn=$1
+  shift
+  item=
+  while read -r item; do
+    if ! $fn "$@" "$item"; then
+      printf '%s\n' "$item"
+    fi
+  done
+}
+
 reduce() {
   fn=$1
   shift

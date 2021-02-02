@@ -64,6 +64,14 @@ test_filter() {
 }
 test_filter
 
+test_remove() {
+  expected=$(list 1 2 4 5 7 8 10)
+  actual=$(seq 10 | remove is_divisible_by 3)
+  tag=test_remove
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_remove
+
 test_reduce() {
   expected=15
   actual=$(seq 5 | reduce add)
