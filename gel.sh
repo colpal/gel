@@ -65,8 +65,3 @@ is_even() {
   test "$(( $1 % 2 ))" -eq 0
 }
 
-filter is_even 1 2 3 4 5
-printf '\n===\n'
-map square 1 2 3 4 5
-printf '\n===\n'
-reduce add 1 2 3 4 5
