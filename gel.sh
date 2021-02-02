@@ -29,15 +29,15 @@ filter() {
       printf '%s\n' "$item"
     fi
   done
-  printf '%s' "$output"
 }
 
 reduce() {
   fn=$1
-  accumulation=$2
-  shift 2
-  for item in "$@"; do
-    accumulation=$($fn "$accumulation" "$item")
+  shift
+  accumulation=
+  read -r accumulation
+  while read -r item; do
+    accumulation=$($fn "$@" "$accumulation" "$item")
   done
   printf '%s' "$accumulation"
 }

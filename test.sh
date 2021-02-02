@@ -56,3 +56,11 @@ test_filter() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_filter
+
+test_reduce() {
+  expected=15
+  actual=$(seq 5 | reduce add)
+  tag=test_reduce
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_reduce
