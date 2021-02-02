@@ -38,6 +38,10 @@ map() {
   done
 }
 
+for_each() {
+  map "$@" >&2
+}
+
 filter() {
   fn=$1
   shift
