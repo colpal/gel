@@ -7,6 +7,10 @@ list() {
   done
 }
 
+unlist() {
+  cat - | xargs
+}
+
 map() {
   fn=$1
   shift

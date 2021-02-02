@@ -32,3 +32,11 @@ test_list() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_list
+
+test_unlist() {
+  expected=$(printf '1 2 3 4 5')
+  actual=$(seq 5 | unlist)
+  tag=test_unlist
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_unlist
