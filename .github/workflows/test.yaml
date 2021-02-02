@@ -1,0 +1,13 @@
+---
+'on': push
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shell: [sh, bash]
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: ${{ matrix.shell }} test.sh
