@@ -7,10 +7,10 @@ map() {
   output=''
   for item in "$@"; do
     if [ -z "$output" ]; then
-      output=$(eval "$fn $item")
+      output=$($fn "$item")
     else
 output="$output
-$(eval "$fn $item")"
+$($fn "$item")"
     fi
   done
   printf '%s' "$output"
@@ -21,7 +21,7 @@ filter() {
   shift
   output=''
   for item in "$@"; do
-    if ! eval "$fn $item"; then
+    if ! $fn "$item"; then
       continue
     fi
 
@@ -40,7 +40,7 @@ reduce() {
   accumulation=$2
   shift 2
   for item in "$@"; do
-    accumulation=$(eval "$fn $accumulation $item")
+    accumulation=$($fn "$accumulation" "$item")
   done
   printf '%s' "$accumulation"
 }
