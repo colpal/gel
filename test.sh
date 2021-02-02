@@ -40,3 +40,11 @@ test_unlist() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_unlist
+
+test_map() {
+  expected=$(printf '1 4 9 16 25')
+  actual=$(seq 5 | map square)
+  tag=test_map
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_map
