@@ -62,7 +62,7 @@ square() {
 }
 
 is_even() {
-  test "$(( $1 % 2 ))" -eq 0
+  is_divisible_by 2 "$1"
 }
 
 is_divisible_by() {
