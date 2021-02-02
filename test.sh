@@ -79,3 +79,11 @@ test_take() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_take
+
+test_append() {
+  expected=$(list 1 2 3 a b c)
+  actual=$(seq 3 | append a b c)
+  tag=test_append
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_append

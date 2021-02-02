@@ -19,6 +19,11 @@ take() {
   head -n "$1"
 }
 
+append() {
+  cat -
+  list "$@"
+}
+
 map() {
   fn=$1
   shift
