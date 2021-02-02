@@ -1,6 +1,6 @@
 set -eu
 
-. gel.sh
+. ./gel.sh
 
 success() {
   printf '[GOOD] %s\n' "$1" >&2
