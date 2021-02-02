@@ -1,6 +1,12 @@
 #!/usr/bin/env sh
 set -eu
 
+list() {
+  for item in "$@"; do
+    printf '%s\n' "$item"
+  done
+}
+
 map() {
   fn=$1
   shift
