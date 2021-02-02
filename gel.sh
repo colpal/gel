@@ -23,17 +23,10 @@ map() {
 filter() {
   fn=$1
   shift
-  output=''
-  for item in "$@"; do
-    if ! $fn "$item"; then
-      continue
-    fi
-
-    if [ -z "$output" ]; then
-      output="$item"
-    else
-output="$output
-$item"
+  item=
+  while read -r item; do
+    if $fn "$@" "$item"; then
+      printf '%s\n' "$item"
     fi
   done
   printf '%s' "$output"
