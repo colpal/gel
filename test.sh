@@ -27,7 +27,7 @@ assert_equal() {
 
 test_list() {
   expected=$(printf '1\n3')
-  actual=$(list 1 2 3)
+  actual=$(list 1 3)
   tag=test_list
   assert_equal "$expected" "$actual" "$tag"
 }
