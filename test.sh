@@ -64,3 +64,11 @@ test_reduce() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_reduce
+
+test_drop() {
+  expected=$(list 3 4 5)
+  actual=$(seq 5 | drop 2)
+  tag=test_drop
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_drop

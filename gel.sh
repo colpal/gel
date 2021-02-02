@@ -11,6 +11,10 @@ unlist() {
   cat - | xargs
 }
 
+drop() {
+  tail -n +$(($1 + 1))
+}
+
 map() {
   fn=$1
   shift
