@@ -75,10 +75,6 @@ reduce() {
   printf '%s' "$accumulation"
 }
 
-identity() {
-  printf '%s' "$1"
-}
-
 add() {
   printf '%s' "$(( $1 + $2))"
 }
