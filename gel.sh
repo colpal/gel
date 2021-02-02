@@ -15,6 +15,10 @@ drop() {
   tail -n +$(($1 + 1))
 }
 
+count() {
+  cat - | wc -l | tr -d ' '
+}
+
 take() {
   head -n "$1"
 }

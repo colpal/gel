@@ -111,3 +111,11 @@ test_prepend() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_prepend
+
+test_count() {
+  expected=10
+  actual=$(seq 10 | count)
+  tag=test_count
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_count
