@@ -24,6 +24,14 @@ assert_equal() {
   fi
 }
 
+test_flip() {
+  expected=$(list 1 2 3 4 5)
+  actual=$(seq 5 | map printf '%s.txt' | map flip basename .txt)
+  tag=test_flip
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_flip
+
 test_list() {
   expected=$(printf '1\n3')
   actual=$(list 1 3)

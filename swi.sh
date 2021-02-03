@@ -1,6 +1,15 @@
 #!/usr/bin/env sh
 set -eu
 
+flip() {
+  fn=$1
+  first=$2
+  second=$3
+  shift 3
+  set -- "$fn" "$second" "$first" "$@"
+  "$@"
+}
+
 list() {
   for item in "$@"; do
     printf '%s\n' "$item"
