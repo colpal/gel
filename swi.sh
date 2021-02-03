@@ -23,6 +23,19 @@ take() {
   head -n "$1"
 }
 
+take_while() {
+  fn=$1
+  shift
+  item=
+  while read -r item; do
+    if $fn "$@" "$item"; then
+      printf '%s\n' "$item"
+    else
+      return 0
+    fi
+  done
+}
+
 append() {
   cat -
   list "$@"

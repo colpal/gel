@@ -111,3 +111,11 @@ test_count() {
   assert_equal "$expected" "$actual" "$tag"
 }
 test_count
+
+test_take_while() {
+  expected=$(list 1 2 3)
+  actual=$(seq 5 | take_while gt 4)
+  tag=test_take_while
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_take_while
