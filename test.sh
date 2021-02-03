@@ -40,6 +40,14 @@ test_list() {
 }
 test_list
 
+test_list_empty() {
+  expected=''
+  actual=$(list '' | map printf ':%s')
+  tag=test_list_empty
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_list_empty
+
 test_unlist() {
   expected=$(printf '1 2 3 4 5')
   actual=$(seq 5 | unlist)
