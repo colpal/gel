@@ -90,3 +90,7 @@ is_even() {
 is_divisible_by() {
   test "$(( $2 % $1 ))" -eq 0
 }
+
+gt() {
+  test "$1" -gt "$2"
+}
