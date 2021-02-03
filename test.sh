@@ -80,6 +80,14 @@ test_drop() {
 }
 test_drop
 
+test_drop_while() {
+  expected=$(list 4 5)
+  actual=$(seq 5 | drop_while gt 4)
+  tag=test_drop_while
+  assert_equal "$expected" "$actual" "$tag"
+}
+test_drop_while
+
 test_take() {
   expected=$(list 1 2 3)
   actual=$(seq 5 | take 3)

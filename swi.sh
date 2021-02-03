@@ -36,6 +36,18 @@ take_while() {
   done
 }
 
+drop_while() {
+  fn=$1
+  shift
+  item=
+  while read -r item; do
+    if $fn "$@" "$item"; then
+      continue
+    fi
+    printf '%s\n' "$item"
+  done
+}
+
 append() {
   cat -
   list "$@"
