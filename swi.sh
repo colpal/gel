@@ -11,9 +11,11 @@ flip() {
 }
 
 list() {
-  for item in "$@"; do
-    printf '%s\n' "$item"
-  done
+  if not str_eq "$*" ''; then
+    for item in "$@"; do
+      printf '%s\n' "$item"
+    done
+  fi
 }
 
 unlist() {
