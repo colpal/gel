@@ -107,3 +107,7 @@ is_divisible_by() {
 gt() {
   test "$1" -gt "$2"
 }
+
+str_eq() {
+  test "$1" = "$2"
+}
